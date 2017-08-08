@@ -12,11 +12,8 @@ public class RobotConstructor {
 		SonyHand sonyHand = new SonyHand();
 		ToshibaLeg toshibaLeg = new ToshibaLeg();
 		SonyHead sonyHead = new SonyHead();
-		
-		Robot robot = new Robot(sonyHand, toshibaLeg, sonyHead);
-		
-		robot.action();
-		
+
+
 		
 	}
 
