@@ -10,6 +10,6 @@ public class Start {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("contex.xml");
         Robot t1000 = (Robot) context.getBean("t1000");
-        t1000.action();
+       // t1000.action();
     }
 }

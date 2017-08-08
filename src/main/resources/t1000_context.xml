@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true"
+>
+    <import resource="sony_context.xml"/>
+    <import resource="toshiba_context.xml"/>
+    <import resource="db_context.xml"/>
+
+    <bean id="t1000" class="robot.ModelT1000" parent="baseModel">
+
+
+        <constructor-arg value="15" type="int"  />
+        <constructor-arg value="true" type="boolean"/>
+        <constructor-arg value="ChackNuris"  type="java.lang.String"/>
+    </bean>
+
+    <bean id="lifeCucle" class="spring.BeanLifeCycle"/>
+
+    <bean id="baseModel">
+        <constructor-arg ref="sonyHand"/>
+        <constructor-arg ref="sonyLeg"/>
+        <constructor-arg ref="sonyHead"/>
+    </bean>
+
+
+</beans>
