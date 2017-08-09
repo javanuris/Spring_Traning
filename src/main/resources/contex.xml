@@ -4,4 +4,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <import resource="t1000_context.xml"/>
 
+    <bean class="spring.BeanLifeCycle"/>
+    <bean id="t1000conveyer" class="conveyer.T1000Conveyer">
+        <lookup-method name="createRobot" bean="t1000"/>
+    </bean>
+
+    <bean id="t1000Pool" class="spring.T1000Pool">
+    <property name="robotCollection">
+     <map>
+         <entry key="2005" >
+         <bean class="robot.ModelT1000" parent="baseModel" scope="prototype">
+         <constructor-arg value="15" type="int"/>
+         <constructor-arg value="true" type="boolean"/>
+         <constructor-arg value="ChackNuris" type="java.lang.String"/>
+     </bean>
+</entry>
+             </map>
+    </property>
+    </bean>
 </beans>
